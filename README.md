@@ -31,14 +31,14 @@ Below is an example of README.
 
 ---
 
-# eslint-plugin-xxxx (template)
+# eslint-plugin-ban-adblock-attrs (template)
 
 <!--
-[![npm version](https://img.shields.io/npm/v/eslint-plugin-xxxx.svg)](https://www.npmjs.com/package/eslint-plugin-xxxx)
-[![Downloads/month](https://img.shields.io/npm/dm/eslint-plugin-xxxx.svg)](http://www.npmtrends.com/eslint-plugin-xxxx)
-[![Build Status](https://travis-ci.org/mysticatea/eslint-plugin-xxxx.svg?branch=master)](https://travis-ci.org/mysticatea/eslint-plugin-xxxx)
-[![Coverage Status](https://codecov.io/gh/mysticatea/eslint-plugin-xxxx/branch/master/graph/badge.svg)](https://codecov.io/gh/mysticatea/eslint-plugin-xxxx)
-[![Dependency Status](https://david-dm.org/mysticatea/eslint-plugin-xxxx.svg)](https://david-dm.org/mysticatea/eslint-plugin-xxxx)
+[![npm version](https://img.shields.io/npm/v/eslint-plugin-ban-adblock-attrs.svg)](https://www.npmjs.com/package/eslint-plugin-ban-adblock-attrs)
+[![Downloads/month](https://img.shields.io/npm/dm/eslint-plugin-ban-adblock-attrs.svg)](http://www.npmtrends.com/eslint-plugin-ban-adblock-attrs)
+[![Build Status](https://travis-ci.org/mysticatea/eslint-plugin-ban-adblock-attrs.svg?branch=master)](https://travis-ci.org/mysticatea/eslint-plugin-ban-adblock-attrs)
+[![Coverage Status](https://codecov.io/gh/mysticatea/eslint-plugin-ban-adblock-attrs/branch/master/graph/badge.svg)](https://codecov.io/gh/mysticatea/eslint-plugin-ban-adblock-attrs)
+[![Dependency Status](https://david-dm.org/mysticatea/eslint-plugin-ban-adblock-attrs.svg)](https://david-dm.org/mysticatea/eslint-plugin-ban-adblock-attrs)
 -->
 
 A template for ESLint plugins.
@@ -48,7 +48,7 @@ A template for ESLint plugins.
 Use [npm](https://www.npmjs.com/) or a compatibility tool to install.
 
 ```
-$ npm install --save-dev eslint eslint-plugin-xxxx
+$ npm install --save-dev eslint eslint-plugin-ban-adblock-attrs
 ```
 
 ### Requirements
@@ -62,26 +62,25 @@ Write your config file such as `.eslintrc.yml`.
 
 ```yml
 plugins:
-  - xxxx
+  - ban-adblock-attrs
 rules:
-  xxxx/example-rule: error
+  ban-adblock-attrs/ban-adblock-attrs: error
 ```
 
 See also [Configuring ESLint](https://eslint.org/docs/user-guide/configuring).
 
 ## Configs
 
-- `xxxx/recommended` ... enables the recommended rules.
+- `ban-adblock-attrs/recommended` ... enables the recommended rules.
 
 ## Rules
 
 <!--RULE_TABLE_BEGIN-->
+### problem
 
-### Stylistic Issues
-
-| Rule ID                                           | Description      |     |
-| :------------------------------------------------ | :--------------- | :-: |
-| [xxxx/example-rule](./docs/rules/example-rule.md) | An example rule. | ⭐️ |
+| Rule ID | Description |    |
+|:--------|:------------|:--:|
+| [ban-adblock-attrs/ban-adblock-attrs](./docs/rules/ban-adblock-attrs.md) | Disallow specific css selectors (only ids and classes right now) that might get blocked by adblockers | ⭐️ |
 
 <!--RULE_TABLE_END-->
 

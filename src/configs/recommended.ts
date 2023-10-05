@@ -2,6 +2,6 @@
 
 export const recommended = {
   rules: {
-    "reatom/example-rule": "error"
-  }
+    'ban-adblock-attrs/ban-adblock-attrs': 'error',
+  },
 }

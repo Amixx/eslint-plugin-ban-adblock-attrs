@@ -1,28 +1,30 @@
-import fs from 'fs';
-import path from 'path';
-import { pluginId } from './lib/plugin-id';
+import fs from 'fs'
+import path from 'path'
+import { pluginId } from './lib/plugin-id'
 
 const addRule = () => {
-  const ruleId = process.argv[2];
-  const type = process.argv[3];
+  const ruleId = process.argv[2]
+  const type = process.argv[3]
 
   // Require rule ID.
   if (!ruleId) {
-    console.error('Usage: npm run add-rule <RULE_ID> <RULE_TYPE>');
-    process.exitCode = 1;
-    return;
+    console.error('Usage: npm run add-rule <RULE_ID> <RULE_TYPE>')
+    process.exitCode = 1
+    return
   }
 
   // Require rule type.
   if (!type) {
-    console.error('Usage: npm run add-rule <RULE_ID> <RULE_TYPE> \n\npossible <RULE_TYPE>: problem | suggestion | layout');
-    process.exitCode = 1;
-    return;
+    console.error(
+      'Usage: npm run add-rule <RULE_ID> <RULE_TYPE> \n\npossible <RULE_TYPE>: problem | suggestion | layout'
+    )
+    process.exitCode = 1
+    return
   }
 
-  const docPath = path.resolve(__dirname, '../docs/rules', `${ruleId}.md`);
-  const rulePath = path.resolve(__dirname, '../src/rules', `${ruleId}.ts`);
-  const testPath = path.resolve(__dirname, '../tests/rules', `${ruleId}.ts`);
+  const docPath = path.resolve(__dirname, '../docs/rules', `${ruleId}.md`)
+  const rulePath = path.resolve(__dirname, '../src/rules', `${ruleId}.ts`)
+  const testPath = path.resolve(__dirname, '../tests/rules', `${ruleId}.ts`)
 
   // Overwrite check.
   for (const filePath of [docPath, rulePath, testPath]) {
@@ -30,9 +32,9 @@ const addRule = () => {
       console.error(
         '%o has existed already.',
         path.relative(process.cwd(), filePath)
-      );
-      process.exitCode = 1;
-      return;
+      )
+      process.exitCode = 1
+      return
     }
   }
 
@@ -52,7 +54,7 @@ const addRule = () => {
 
 (TODO: what do options exist?)
 `
-  );
+  )
 
   fs.writeFileSync(
     rulePath,
@@ -76,7 +78,7 @@ const rule: Rule.RuleModule = {
 
 export default rule;
 `
-  );
+  )
 
   fs.writeFileSync(
     testPath,
@@ -96,7 +98,7 @@ tester.run("${ruleId}", rule, {
   invalid: [],
 });
 `
-  );
-};
+  )
+}
 
-addRule();
+addRule()
